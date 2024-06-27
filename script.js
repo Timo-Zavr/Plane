@@ -3,9 +3,11 @@ const canvas = map.getContext('2d')
 canvas.fillStyle = 'rgb( 60, 100, 0)'
 
 const grid = 15
-const cSpeed = 20                      
-const pSpeed = 10
+const cSpeed = 21
+const pSpeed = 13
 const lSpeed = 15
+const l1Speed = 17
+const l2Speed = 19
 
 const con = document.querySelector("#level")
 let coins = parseInt(con.textContent)
@@ -44,7 +46,7 @@ const lock1 = {
     y: grid * 20,
     width: grid * 3,
     height: grid * 2,
-    dx: -lSpeed,
+    dx: -l1Speed,
     dy: random1
 }
 const lock2 = {
@@ -52,7 +54,7 @@ const lock2 = {
     y: grid * 20,
     width: grid * 3,
     height: grid * 2,
-    dx: -lSpeed,
+    dx: -l2Speed,
     dy: random2
 }
 
@@ -75,13 +77,13 @@ function renderOll() {
 function moveOll() {
     plaer.y += plaer.dy
     lock.x += lock.dx
-    lock.y = random
+    lock.y = lock.dy
     lock1.x += lock1.dx
-    lock1.y = random1
+    lock1.y = lock1.dy
     lock2.x += lock2.dx
-    lock2.y = random2
+    lock2.y = lock2.dy
     coin.x += coin.dx
-    coin.y = random3
+    coin.y = coin.dy
 }
 function isCollides(object1, object2) {
     const width1 = object1.x + object1.width;
@@ -147,7 +149,7 @@ function loop() {
 
     colligeWisOll()
     
-    // resetGame()
+    resetGame()
     renderMap()
     requestAnimationFrame(loop)
 }
