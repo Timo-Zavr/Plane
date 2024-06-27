@@ -77,13 +77,13 @@ function renderOll() {
 function moveOll() {
     plaer.y += plaer.dy
     lock.x += lock.dx
-    lock.y = lock.dy
+    lock.y = random
     lock1.x += lock1.dx
-    lock1.y = lock1.dy
+    lock1.y = random1
     lock2.x += lock2.dx
-    lock2.y = lock2.dy
+    lock2.y = random2
     coin.x += coin.dx
-    coin.y = coin.dy
+    coin.y = random3
 }
 function isCollides(object1, object2) {
     const width1 = object1.x + object1.width;
