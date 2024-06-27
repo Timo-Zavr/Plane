@@ -11,6 +11,8 @@ const l2Speed = 19
 
 const con = document.querySelector("#level")
 let coins = parseInt(con.textContent)
+const rec = document.querySelector("#record")
+let record = parseInt(rec.textContent)
 
 let random = Math.floor(Math.random()*550)+1
 let random1 = Math.floor(Math.random()*550)+1
@@ -126,6 +128,7 @@ function resetGame(){
         con.textContent = coins
     }
     if (isCollides(plaer, lock) || isCollides(plaer, lock1) || isCollides(plaer, lock2)){
+        recordCheck()
         lock.x = map.width
         random = Math.floor(Math.random()*550)+1
         lock1.x = map.width
@@ -139,6 +142,12 @@ function resetGame(){
 
     }
     //Смерть и Баллы
+}
+function recordCheck(){
+    if (coins > record){
+        record = coins
+        rec.textContent = record
+    }
 }
 
 function loop() {
