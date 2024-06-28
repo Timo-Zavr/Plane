@@ -14,10 +14,10 @@ let coins = parseInt(con.textContent)
 const rec = document.querySelector("#record")
 let record = parseInt(rec.textContent)
 
-let random = Math.floor(Math.random()*550)+1
-let random1 = Math.floor(Math.random()*550)+1
-let random2 = Math.floor(Math.random()*550)+1
-let random3 = Math.floor(Math.random()*550)+1
+let random = Math.floor(Math.random()*515)+15
+let random1 = Math.floor(Math.random()*515)+15
+let random2 = Math.floor(Math.random()*515)+15
+let random3 = Math.floor(Math.random()*535)+15
 
 const plaer = {
     x: grid * 15,
@@ -103,26 +103,26 @@ function colligeWisOll() {
     } else if (plaer.y > map.height - grid*3){
         plaer.y = map.height - grid*3
     }
-    if (lock.x < grid){
+    if (lock.x < grid - grid * 3){
         lock.x = map.width
-        random = Math.floor(Math.random()*550)+1
+        random = Math.floor(Math.random()*515)+15
     }
-    if (lock1.x < grid){
+    if (lock1.x < grid - grid * 3){
         lock1.x = map.width
-        random1 = Math.floor(Math.random()*550)+1
+        random1 = Math.floor(Math.random()*515)+15
     }
-    if (lock2.x < grid){
+    if (lock2.x < grid - grid * 3){
         lock2.x = map.width
-        random2 = Math.floor(Math.random()*550)+1
+        random2 = Math.floor(Math.random()*515)+15
     }
-    if (coin.x < grid){
+    if (coin.x < grid - grid){
         coin.x = map.width
-        random3 = Math.floor(Math.random()*550)+1
+        random3 = Math.floor(Math.random()*535)+15
     }
 }
 function resetGame(){
     if (isCollides(plaer, coin)){
-        random3 = Math.floor(Math.random()*550)+1
+        random3 = Math.floor(Math.random()*535)+15
         coin.x = map.width
         coins++
         con.textContent = coins
@@ -130,13 +130,13 @@ function resetGame(){
     if (isCollides(plaer, lock) || isCollides(plaer, lock1) || isCollides(plaer, lock2)){
         recordCheck()
         lock.x = map.width
-        random = Math.floor(Math.random()*550)+1
+        random = Math.floor(Math.random()*515)+15
         lock1.x = map.width
-        random1 = Math.floor(Math.random()*550)+1
+        random1 = Math.floor(Math.random()*515)+15
         lock2.x = map.width
-        random2 = Math.floor(Math.random()*550)+1
+        random2 = Math.floor(Math.random()*515)+15
         coin.x = map.width
-        random3 = Math.floor(Math.random()*550)+1
+        random3 = Math.floor(Math.random()*535)+15
         coins = 0
         con.textContent = coins
 
