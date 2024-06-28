@@ -14,10 +14,10 @@ let coins = parseInt(con.textContent)
 const rec = document.querySelector("#record")
 let record = parseInt(rec.textContent)
 
-let random = Math.floor(Math.random()*515)+15
-let random1 = Math.floor(Math.random()*515)+15
-let random2 = Math.floor(Math.random()*515)+15
-let random3 = Math.floor(Math.random()*535)+15
+let random = Math.floor(Math.random()*505)+15
+let random1 = Math.floor(Math.random()*505)+15
+let random2 = Math.floor(Math.random()*505)+15
+let random3 = Math.floor(Math.random()*525)+15
 
 const plaer = {
     x: grid * 15,
@@ -105,19 +105,19 @@ function colligeWisOll() {
     }
     if (lock.x < grid - grid * 3){
         lock.x = map.width
-        random = Math.floor(Math.random()*515)+15
+        random = Math.floor(Math.random()*505)+15
     }
     if (lock1.x < grid - grid * 3){
         lock1.x = map.width
-        random1 = Math.floor(Math.random()*515)+15
+        random1 = Math.floor(Math.random()*505)+15
     }
     if (lock2.x < grid - grid * 3){
         lock2.x = map.width
-        random2 = Math.floor(Math.random()*515)+15
+        random2 = Math.floor(Math.random()*505)+15
     }
     if (coin.x < grid - grid){
         coin.x = map.width
-        random3 = Math.floor(Math.random()*535)+15
+        random3 = Math.floor(Math.random()*525)+15
     }
 }
 function resetGame(){
@@ -130,13 +130,13 @@ function resetGame(){
     if (isCollides(plaer, lock) || isCollides(plaer, lock1) || isCollides(plaer, lock2)){
         recordCheck()
         lock.x = map.width
-        random = Math.floor(Math.random()*515)+15
+        random = Math.floor(Math.random()*505)+15
         lock1.x = map.width
-        random1 = Math.floor(Math.random()*515)+15
+        random1 = Math.floor(Math.random()*505)+15
         lock2.x = map.width
-        random2 = Math.floor(Math.random()*515)+15
+        random2 = Math.floor(Math.random()*505)+15
         coin.x = map.width
-        random3 = Math.floor(Math.random()*535)+15
+        random3 = Math.floor(Math.random()*525)+15
         coins = 0
         con.textContent = coins
 
