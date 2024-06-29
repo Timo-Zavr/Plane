@@ -73,6 +73,12 @@ body {
 }
 
 canvas{
+    width: 1100px;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     z-index: 1;
 }
 
@@ -84,6 +90,50 @@ body {
     flex-direction: column;
 }
 
-@media (max-width: 360px){
-    
+@media (max-width: 900px){
+    canvas{
+        width: 220px;
+        height: 110px;
+    }
+    .l{
+        margin-left: -100px;
+        margin-top: 35px;
+    }
+    .r{
+        margin-left: 230px;
+        margin-top: -70px;
+    }
+    .up {
+        margin-left: -200px;
+        margin-top: -91px;
+        height: 10px;
+        width: 10px;
+    }
+    .down {
+        margin-left: -200px;
+        margin-top: 70px;
+        width: 10px;
+        height: 10px;
+    }
+    .scale {
+        margin-left: 185px;
+        margin-top: 70px;
+        width: 25px;
+        height: 10px;
+    }
+    .U {
+        font-size: 10px;
+    }
+    .D {
+        font-size: 10px;
+    }
+    .S {
+        font-size: 10px;
+    }
+    #level {
+        font-size: 20px;
+    }
+    #record {
+        font-size: 10px;
+    }
 }
