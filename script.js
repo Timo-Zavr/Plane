@@ -33,8 +33,9 @@ const coin = {
     width: grid,
     height: grid,
     dx: -cSpeed,
-    dy: random3
+    dy: random3,
 }
+
 const lock = {
     x: map.width,
     y: grid * 20,
@@ -60,21 +61,55 @@ const lock2 = {
     dy: random2
 }
 
-function renderMap() {
+function clearMap() {
+    canvas.clearRect(0, 0, map.width, map.height);
+}
+function renderPlane(){
+    canvas.fillStyle = 'rgb( 0, 22, 85)'
+    canvas.fillRect(0, 0, map.width, map.height)
+    canvas.fillStyle = 'rgb( 100, 100, 100)'
+    canvas.fillRect(plaer.x, plaer.y, plaer.width, plaer.height)
+    canvas.fillRect(plaer.x + plaer.width, plaer.y + 5, 10, 25)
+    canvas.fillRect(plaer.x + plaer.width + 10, plaer.y + 10, 10, 15)
+    canvas.fillRect(plaer.x + plaer.width + 20, plaer.y + 15, 5, 5)
+    canvas.fillRect(plaer.x - 20, plaer.y , 20, 25)
+    canvas.fillRect(plaer.x - 40, plaer.y , 20, 20)
+    canvas.fillRect(plaer.x - 55, plaer.y , 20, 15)
+    canvas.fillRect(plaer.x - 55, plaer.y - 5, 15, 5)
+    canvas.fillRect(plaer.x - 60, plaer.y - 15, 10, 20)
+    canvas.fillStyle = 'rgb( 82, 135, 255)'
+    canvas.fillRect(plaer.x + 10, plaer.y + 10, 10, 10)
+    canvas.fillRect(plaer.x + 30, plaer.y + 10, 10, 10)
+    canvas.fillRect(plaer.x + 50, plaer.y + 10, 10, 10)
+    canvas.fillRect(plaer.x + 70, plaer.y + 10, 10, 10)
+    canvas.fillRect(plaer.x + 90, plaer.y + 10, 10, 10)
+    canvas.fillRect(plaer.x + 110, plaer.y + 10, 10, 10)
+    canvas.fillRect(plaer.x + 130, plaer.y + 10, 10, 10)
+}
+
+function renderOll() {
+    canvas.fillStyle = 'rgb( 60, 30, 0)'
+    canvas.fillRect(lock.x, lock.y, lock.width, lock.height)
+    canvas.fillStyle = 'rgb( 200, 100, 0)'
+    canvas.fillRect(lock.x +10, lock.y, 10, 10)
+    canvas.fillRect(lock.x + 30, lock.y + 15, 15, 10)
+    canvas.fillStyle = 'rgb( 60, 30, 0)'
+    canvas.fillRect(lock1.x, lock1.y, lock1.width, lock1.height)
+    canvas.fillStyle = 'rgb( 200, 100, 0)'
+    canvas.fillRect(lock1.x +10, lock1.y + 5, 5, 5)
+    canvas.fillRect(lock1.x + 25, lock1.y + 15, 15, 10)
+    canvas.fillStyle = 'rgb( 60, 30, 0)'
+    canvas.fillRect(lock2.x, lock2.y, lock2.width, lock2.height)
+    canvas.fillStyle = 'rgb( 200, 100, 0)'
+    canvas.fillRect(lock2.x +5, lock2.y + 5, 10, 5)
+    canvas.fillRect(lock2.x + 30, lock2.y + 15, 5, 10)
+    canvas.fillStyle = 'rgb( 2000, 2000, 0)'
+    canvas.fillRect(coin.x, coin.y, coin.width, coin.height)
+    canvas.fillStyle = 'rgb( 60, 100, 0)'
     canvas.fillRect(0, 0, map.width, grid); // Верхняя граница
     canvas.fillRect(0, map.height - grid, map.width, grid) // Нижняя граница
     canvas.fillRect(0, 0, grid, map.height) // Левая граница
     canvas.fillRect(map.width - grid, 0, grid, map.height) // Правая граница
-}
-function clearMap() {
-    canvas.clearRect(0, 0, map.width, map.height);
-}
-function renderOll() {
-    canvas.fillRect(plaer.x, plaer.y, plaer.width, plaer.height)
-    canvas.fillRect(lock.x, lock.y, lock.width, lock.height)
-    canvas.fillRect(lock1.x, lock1.y, lock1.width, lock1.height)
-    canvas.fillRect(lock2.x, lock2.y, lock2.width, lock2.height)
-    canvas.fillRect(coin.x, coin.y, coin.width, coin.height)
 }
 function moveOll() {
     plaer.y += plaer.dy
@@ -88,8 +123,8 @@ function moveOll() {
     coin.y = random3
 }
 function isCollides(object1, object2) {
-    const width1 = object1.x + object1.width;
-    const width2 = object2.x + object2.width;
+    const width1 = object1.x + object1.width+20;
+    const width2 = object2.x + object2.width+20;
     const height1 = object1.y + object1.height;
     const height2 = object2.y + object2.height;
     return object1.x < width2
@@ -152,14 +187,14 @@ function recordCheck(){
 
 function loop() {
     clearMap()
-    
+
+    renderPlane()
     renderOll()
     moveOll()
 
     colligeWisOll()
     
     resetGame()
-    renderMap()
     requestAnimationFrame(loop)
 }
 

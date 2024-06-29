@@ -12,7 +12,7 @@ body {
     height: 100px;
     margin-left: -850px;
     margin-top: 170px;
-    z-index: 0;
+    z-index: 3;
 }
 .r{
     color: rgb(73, 65, 110);
@@ -21,7 +21,7 @@ body {
     height: 50px;
     margin-left: 970px;
     margin-top: -570px;
-    z-index: 0;
+    z-index: 3;
 }
 
 #level {
@@ -32,7 +32,7 @@ body {
 }
 
 canvas{
-    z-index: 3;
+    z-index: 0;
 }
 
 body {
