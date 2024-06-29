@@ -1,7 +1,7 @@
 const map = document.querySelector("#game")
 const buttonU = document.querySelector(".U");
 const buttonD = document.querySelector(".D");
-// const buttonS = document.querySelector(".S");
+const buttonS = document.querySelector(".S");
 const canvas = map.getContext('2d')
 canvas.fillStyle = 'rgb( 60, 100, 0)'
 
@@ -233,7 +233,14 @@ function fs(){
         document.exitFullscreen()
     }
 }
-// buttonS.addEventListener('click', (event) => {
-    // plaer.dy = pSpeed;
-// });
+buttonS.addEventListener('click', (event) => {
+    if (!document.fullscreenElement){
+        document.documentElement.requestFullscreen()
+        buttonS.textContent = '><'
+    } else if (document.exitFullscreen){
+        document.exitFullscreen()
+        buttonS.textContent
+        buttonS.textContent = '<>'
+    }
+});
 requestAnimationFrame(loop)
