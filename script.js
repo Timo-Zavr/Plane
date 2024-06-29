@@ -236,11 +236,11 @@ function fs(){
 buttonS.addEventListener('click', (event) => {
     if (!document.fullscreenElement){
         document.documentElement.requestFullscreen()
-        buttonS.textContent = '><'
+        buttonS.textContent = ']  ['
     } else if (document.exitFullscreen){
         document.exitFullscreen()
         buttonS.textContent
-        buttonS.textContent = '<>'
+        buttonS.textContent = '[  ]'
     }
 });
 requestAnimationFrame(loop)
