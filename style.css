@@ -7,23 +7,50 @@ body {
 
 .l{
     color: rgb(90, 52, 52);
-    position: fixed;
+    position: absolute;
     width: 100px;
     height: 100px;
-    margin-left: -850px;
-    margin-top: 170px;
+    margin-left: -825px;
+    margin-top: -210px;
     z-index: 3;
 }
 .r{
     color: rgb(73, 65, 110);
-    position: fixed;
+    position: absolute;
     width: 50px;
     height: 50px;
     margin-left: 970px;
     margin-top: -570px;
     z-index: 3;
 }
-
+.up {
+    background-color: rgb( 0, 22, 85);
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-left: -874px;
+    margin-top: -350px;
+    z-index: 3;
+}
+.down {
+    background-color: rgb( 0, 22, 85);
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-left: -874px;
+    margin-top: 310px;
+    z-index: 3;
+}
+.U {
+    background-color: rgb( 0, 22, 85);
+    font-size: 50px;
+    z-index: 0;
+}
+.D {
+    background-color: rgb( 0, 22, 85);
+    font-size: 50px;
+    z-index: 0;
+}
 #level {
     font-size: 100px;
 }
@@ -32,7 +59,7 @@ body {
 }
 
 canvas{
-    z-index: 0;
+    z-index: 1;
 }
 
 body {

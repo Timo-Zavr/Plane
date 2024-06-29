@@ -1,4 +1,6 @@
 const map = document.querySelector("#game")
+const buttonU = document.querySelector(".U");
+const buttonD = document.querySelector(".D");
 const canvas = map.getContext('2d')
 canvas.fillStyle = 'rgb( 60, 100, 0)'
 
@@ -205,6 +207,12 @@ document.addEventListener('keydown', (event) => {
     else if (event.key === 's' || event.key === 'ы') {
         plaer.dy = pSpeed;
     }
+});
+buttonU.addEventListener('click', (event) => {
+    plaer.dy = -pSpeed;
+});
+buttonD.addEventListener('click', (event) => {
+    plaer.dy = pSpeed;
 });
 document.addEventListener('keyup', (event) => {
     if (event.key === 'w' || event.key === 'ц' || event.key === 's' || event.key === 'ы') {
