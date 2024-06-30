@@ -6,16 +6,16 @@ body {
 }
 
 .l{
-    color: rgb(90, 52, 52);
+    color: rgb(131, 60, 60);
     position: absolute;
     width: 100px;
     height: 100px;
-    margin-left: -825px;
-    margin-top: -210px;
+    margin-left: -910px;
+    margin-top: 170px;
     z-index: 3;
 }
 .r{
-    color: rgb(73, 65, 110);
+    color: rgb(134, 129, 59);
     position: absolute;
     width: 50px;
     height: 50px;
@@ -30,7 +30,8 @@ body {
     height: 50px;
     margin-left: -874px;
     margin-top: -350px;
-    z-index: 3;
+    display: none;
+    z-index: 4;
 }
 .down {
     background-color: rgb( 0, 22, 85);
@@ -39,7 +40,8 @@ body {
     height: 50px;
     margin-left: -874px;
     margin-top: 310px;
-    z-index: 3;
+    display: none;
+    z-index: 4;
 }
 .scale {
     background-color: rgb( 0, 22, 85);
@@ -48,22 +50,26 @@ body {
     height: 25px;
     margin-left: 1000px;
     margin-top: 400px;
-    z-index: 3;
+    display: none;
+    z-index: 4;
 }
 .U {
     background-color: rgb( 0, 22, 85);
     font-size: 50px;
     z-index: 0;
+    color: rgb(62, 139, 139);
 }
 .D {
     background-color: rgb( 0, 22, 85);
     font-size: 50px;
     z-index: 0;
+    color: rgb(62, 139, 139);
 }
 .S {
     background-color: rgb( 0, 22, 85);
     font-size: 40px;
     z-index: 0;
+    color: rgb(62, 139, 139);
 }
 #level {
     font-size: 100px;
@@ -96,8 +102,8 @@ body {
         height: 330px;
     }
     .l{
-        margin-left: -500px;
-        margin-top: -70px;
+        margin-left: -505px;
+        margin-top: -300px;
     }
     .r{
         margin-left: 580px;
@@ -105,21 +111,24 @@ body {
     }
     .up {
         margin-left: -600px;
-        margin-top: -270px;
+        margin-top: 0px;
         height: 10px;
         width: 10px;
+        display: block;
     }
     .down {
         margin-left: -600px;
         margin-top: 200px;
         width: 10px;
         height: 10px;
+        display: block;
     }
     .scale {
         margin-left: 580px;
         margin-top: 215px;
         width: 45px;
         height: 10px;
+        display: block;
     }
     .U {
         font-size: 30px;
