@@ -227,6 +227,19 @@ buttonD.addEventListener('mousedown', (event) => {
 buttonD.addEventListener('mouseup', (event) => {
     plaer.dy = 0
 });
+buttonU.addEventListener('touchstart', (event) => {
+    plaer.dy = -pSpeed;
+});
+buttonU.addEventListener('touchcancel', (event) => {
+    plaer.dy = 0
+});
+
+buttonD.addEventListener('touchstart', (event) => {
+    plaer.dy = pSpeed;
+});
+buttonD.addEventListener('touchcancel', (event) => {
+    plaer.dy = 0
+});
 
 
 document.addEventListener('keydown', (event) => {
