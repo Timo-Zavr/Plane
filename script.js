@@ -179,7 +179,6 @@ function resetGame(){
         con.textContent = coins
 
     }
-    //Смерть и Баллы
 }
 function recordCheck(){
     if (coins > record){
@@ -215,11 +214,18 @@ document.addEventListener('keyup', (event) => {
     }
 })
 
-buttonU.addEventListener('click', (event) => {
+buttonU.addEventListener('mousedown', (event) => {
     plaer.dy = -pSpeed;
 });
-buttonD.addEventListener('click', (event) => {
+buttonU.addEventListener('mouseup', (event) => {
+    plaer.dy = 0
+});
+
+buttonD.addEventListener('mousedown', (event) => {
     plaer.dy = pSpeed;
+});
+buttonD.addEventListener('mouseup', (event) => {
+    plaer.dy = 0
 });
 
 
