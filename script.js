@@ -260,7 +260,6 @@ buttonS.addEventListener('click', (event) => {
         buttonS.textContent = ']  ['
     } else if (document.exitFullscreen){
         document.exitFullscreen()
-        buttonS.textContent
         buttonS.textContent = '[  ]'
     }
 });
